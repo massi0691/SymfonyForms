@@ -1,0 +1,21 @@
+{% extends 'content_base.html.twig' %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.0.1/autocomplete.jquery.min.js" integrity="sha512-hXB2eDYPTV4gico6sWdsGIylYKhu0J13nSgbko0v9nEHNiapStCDHGT79dsJMK890dhzkIPDdo+2L2bsiAr1hQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="{{ asset('js/algolia-autocomplete.js') }}"></script>
+    <script src="{{ asset('js/admin_article_form.js') }}"></script>
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="{{ asset('css/algolia-autocomplete.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block content_body %}
+    <h1> Launch a new article </h1>
+    {{ include('article_admin/_form.html.twig', {
+        button_text: 'Create!'
+    }) }}
+
+{% endblock %}
